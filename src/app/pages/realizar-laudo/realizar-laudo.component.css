@@ -1,0 +1,87 @@
+.editor {
+  margin-top: 4%;
+}
+
+.infoLabel {
+  color: #29b6c5;
+  margin-left: 2%;
+  font-size: smaller;
+}
+
+.infoConteudo {
+  font-size: smaller;
+}
+
+.btnLaudo {
+  margin-left: 85%;
+  margin-top: 3%;
+}
+
+.faturamento-container {
+  margin-top: 30px;
+}
+
+div.po-font-subtitle.po-text-center.autorizador-widget-text {
+  font-size: 3vh;
+}
+
+div.autorizador-widget-text-descricao {
+    font-size: 2vh;
+}
+
+
+.autorizador-widget {
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.autorizador-widget :hover {
+  border-color: #0c9abe;
+}
+
+.autorizador-widget .po-widget .po-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.autorizador-widget-text {
+  line-height: 1.33;
+  letter-spacing: normal;
+  text-align: center;
+  color: #0c9abe;
+}
+
+.autorizador-widget-text-descricao {
+  letter-spacing: normal;
+  text-align: center;
+  line-height: 1.71;
+  color: #1d2426;
+}
+
+.po-widget-disabled {
+  background-color: white;
+  cursor: not-allowed;
+  margin-bottom: 15px;
+}
+
+.po-widget-disabled .po-widget-body {
+  cursor: not-allowed;
+  background-color: white;
+}
+
+.po-widget-disabled .po-widget .autorizador-widget-text {
+  color: #c5c3c3;
+}
+
+.po-widget-disabled .po-widget .autorizador-widget-text-descricao {
+  color: #c5c3c3;
+}
+
+a {
+  color:#0c9abe;
+}
+
+.imagem {
+  margin-left: 30%;
+}

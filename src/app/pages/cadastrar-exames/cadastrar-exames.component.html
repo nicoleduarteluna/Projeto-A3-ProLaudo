@@ -1,0 +1,59 @@
+<po-page-default [p-title]="menuItemSelected">
+  <!-- <po-widget> -->
+  <po-divider
+    p-border-width="string"
+    p-label="Dados do Beneficiário"
+  ></po-divider>
+  <po-combo
+    name="comboBenef"
+    p-label="Selecione o beneficiário"
+    p-placeholder="Busque pelo nome"
+    [p-filter-service]="cadastrarExamesService"
+    (p-change)="onChangeBenef($event)"
+  >
+  </po-combo>
+  <po-divider p-border-width="string" p-label="Dados do Exame"></po-divider>
+  <po-input
+    class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+    p-clean="true"
+    name="nomeExame"
+    p-label="Nome do Exame"
+    [(ngModel)]="nomeExame"
+  ></po-input>
+  <po-input
+    class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+    p-clean="true"
+    name="dataExecucao"
+    p-label="Data de Realização do Exame"
+    [(ngModel)]="dataExecucao"
+  ></po-input>
+  <div class="uploadArchives">
+    <po-upload
+      name="upload"
+      p-label=""
+      p-url="https://po-sample-api.herokuapp.com/v1/uploads/addFile"
+      [p-literals]="customLiterals"
+      p-show-required
+      [p-auto-upload]="true"
+      (p-success)="showBtn()"
+    >
+    </po-upload>
+  </div>
+  <div class="btnCadastrar">
+    <po-button
+    p-label="Cadastrar Exame"
+    p-kind="primary"
+    (p-click)="openModal()"
+  ></po-button>
+  </div>
+  <!-- </po-widget> -->
+</po-page-default>
+
+<po-modal
+  #modalCadastroExame
+  p-title="Cadastrar Exame"
+  [p-primary-action]="primaryAction"
+  [p-secondary-action]="secondaryAction"
+>
+  Confirmar o cadastrar do exame {{nomeExame}} para o beneficiário {{nomeCompleto}}?
+</po-modal>

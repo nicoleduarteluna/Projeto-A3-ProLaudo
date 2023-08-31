@@ -1,0 +1,41 @@
+<po-page-default [p-title]="menuItemSelected">
+  <div *ngIf="this.usuarioLogado.type == 'medico'">
+    <span class="labelCentral"> Filtrar </span>
+    <hr />
+    <po-select
+      #filterSelect
+      class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+      name="select"
+      p-label="Filtrar por..."
+      [p-options]="filtroOptions"
+      (p-change)="changeFilter($event)"
+    ></po-select>
+    <po-input
+      class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+      p-clean="true"
+      name="nomeCompleto"
+      [p-label]="labelConteudo"
+      [(ngModel)]="conteudoFiltro"
+      (p-change)="filtrarItens($event)"
+    >
+    </po-input>
+    <span class="invisible"> teste </span>
+    <hr />
+    <po-table
+      class="table"
+      [p-items]="exames"
+      [p-columns]="columnsExame"
+      [p-container]="true"
+      [p-hide-text-overflow]="true"
+      [p-hide-columns-manager]="true"
+      [p-selectable]="true"
+      p-single-select
+      (p-selected)="teste($event)"
+    >
+    </po-table>
+    <hr>
+    <po-button class="btnLaudar" p-label="Laudar" p-kind="primary" (p-click)="realizarLaudo()"></po-button>
+  </div>
+  <div *ngIf="this.usuarioLogado.type == 'paciente'">
+  </div>
+</po-page-default>

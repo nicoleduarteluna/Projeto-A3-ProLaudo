@@ -1,0 +1,11 @@
+<div class="po-wrapper">
+  <po-menu *ngIf="mostraMenu"
+    [p-collapsed]="false"
+    [p-menus]="menus">
+  </po-menu>
+  <router-outlet></router-outlet>
+</div>
+
+<po-modal #modalExit
+  p-title="Sair"
+  [p-primary-action]="primaryAction"> Você realmente deseja sair? </po-modal>

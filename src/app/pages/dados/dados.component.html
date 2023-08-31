@@ -1,0 +1,76 @@
+<po-page-default [p-title]="menuItemSelected">
+  <!-- <po-table class="table" [p-items]="exames"
+    [p-columns]="columnsExame"
+    [p-actions]="actions"
+    p-actions-right="true"> </po-table> -->
+  <po-widget>
+    <po-input
+      class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+      p-clean="true"
+      name="nomeCompleto"
+      p-label="Nome Completo"
+      [(ngModel)]="nomeCompleto"
+    >
+    </po-input>
+    <po-input
+      class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+      p-clean="true"
+      name="dataNascimento"
+      p-label="Data de Nascimento"
+      [(ngModel)]="dataNascimento"
+    >
+    </po-input>
+    <po-input
+      class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+      p-clean="true"
+      name="cpf"
+      p-label="CPF"
+      p-mask="999.999.999-99"
+      [(ngModel)]="cpf"
+    >
+    </po-input>
+    <po-input
+      class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+      p-clean="true"
+      name="rg"
+      p-label="RG"
+      p-mask="999.999.999-9"
+      [(ngModel)]="rg"
+      [p-disabled]="true"
+    >
+    </po-input>
+    <po-input
+      class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+      p-clean="true"
+      name="email"
+      p-label="E-mail"
+      [(ngModel)]="email"
+    >
+    </po-input>
+    <po-input
+      class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+      p-clean="true"
+      name="telefone"
+      p-label="Telefone"
+      p-mask="(99) 99999?-9999"
+      [(ngModel)]="telefone"
+    >
+    </po-input>
+  </po-widget>
+  <div class="btnActions">
+    <po-button
+      p-label="Editar dados"
+      p-kind="primary"
+      (p-click)="openModal()"
+    ></po-button>
+  </div>
+</po-page-default>
+
+<po-modal
+  #modalUpdate
+  p-title="Editar dados"
+  [p-primary-action]="primaryAction"
+  [p-secondary-action]="secondaryAction"
+>
+  Confirmar a alteração dos dados?
+</po-modal>

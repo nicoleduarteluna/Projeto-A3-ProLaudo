@@ -1,0 +1,107 @@
+<po-page-default [p-title]="menu">
+  <po-divider class="po-md-12" p-label="Dados do Paciente"></po-divider>
+
+  <po-container>
+    <span class="infoLabel"> Nome: </span>
+    <span class="infoConteudo"> {{ nomePaciente }} </span>
+    <span class="infoLabel"> Data de Nascimento: </span>
+    <span class="infoConteudo"> {{ dataNascimento }} </span>
+    <span class="infoLabel"> CPF: </span>
+    <span class="infoConteudo"> {{ cpf }} </span>
+    <span class="infoLabel"> Exame: </span>
+    <span class="infoConteudo"> {{ nomeExame }} </span>
+    <span class="infoLabel" (click)="openModalImagem()"> Visualizar Exame </span>
+  </po-container>
+
+  <po-textarea
+    class="editor"
+    [(ngModel)]="laudo"
+    p-rows="5"
+  ></po-textarea>
+
+  <div>
+    <po-widget p-no-shadow="true" (p-click)="modelBraco()">
+      <div class="autorizador-widget-div">
+        <div class="attendance-types-buttons">
+          <div>
+            <div
+              class="attendance-type-text po-font-subtitle po-text-center autorizador-widget-text"
+            >
+              Raio X (BRAÇO)
+            </div>
+            <div
+              class="attendance-type-text-detail po-text-center autorizador-widget-text-descricao"
+            >
+              {{ raioXBraco }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </po-widget>
+    <po-widget p-no-shadow="true" (p-click)="modelCLS()">
+      <div class="autorizador-widget-div">
+        <div class="attendance-types-buttons">
+          <div>
+            <div
+              class="attendance-type-text po-font-subtitle po-text-center autorizador-widget-text"
+            >
+              Raio X (COLUNA LOMBO-SACRA)
+            </div>
+            <div
+              class="attendance-type-text-detail po-text-center autorizador-widget-text-descricao"
+            >
+              {{ raioXCLS }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </po-widget>
+    <po-widget p-no-shadow="true" (p-click)="modelUltrassomAPU()">
+      <div class="autorizador-widget-div">
+        <div class="attendance-types-buttons">
+          <div>
+            <div
+              class="attendance-type-text po-font-subtitle po-text-center autorizador-widget-text"
+            >
+              Ultrassom (APARELHO URINÁRIO)
+            </div>
+            <div
+              class="attendance-type-text-detail po-text-center autorizador-widget-text-descricao"
+            >
+              {{ ultrassomAPU }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </po-widget>
+  </div>
+
+  <div class="btnLaudo">
+    <po-button
+      p-label="Finalizar Laudo"
+      p-kind="primary"
+      (p-click)="openModal()"
+    ></po-button>
+  </div>
+</po-page-default>
+
+<po-modal
+  #modalConfirmLaudo
+  p-title="Finalizar Laudo"
+  [p-primary-action]="primaryAction"
+  [p-secondary-action]="secondaryAction"
+>
+  Deseja finalizar e salvar o laudo do exame {{ nomeExame }} pertencente ao
+  paciente {{ nomePaciente }}?
+</po-modal>
+
+<po-modal
+  #modalImagem
+  p-title="Visualizar Exame"
+  [p-primary-action]="primaryActionImagem"
+>
+  <!-- <po-image [p-src]="srcImage" p-alt="Exame" p-height="300"> </po-image> -->
+  <div class="imagem">
+    <img [src]="srcImage" width= 250px height=200px >
+  </div>
+</po-modal>

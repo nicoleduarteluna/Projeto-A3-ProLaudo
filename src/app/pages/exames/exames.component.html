@@ -1,0 +1,14 @@
+<po-page-default [p-title]="menuItemSelected">
+  <po-table class="table" [p-items]="exames"
+    [p-columns]="columnsExame"
+    [p-actions]="actions"
+    p-actions-right="true"> </po-table>
+</po-page-default>
+
+<po-modal
+  #modalLaudo
+  [p-title]="titleModal"
+  [p-primary-action]="primaryAction"
+>
+  {{laudo}}
+</po-modal>

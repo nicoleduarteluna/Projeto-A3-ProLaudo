@@ -1,0 +1,142 @@
+<po-page-default [p-title]="menuItemSelected">
+  <po-widget>
+    <po-select
+      name="select"
+      p-label="Tipo de usuário"
+      (p-change)="updateForm($event)"
+      [p-options]="[
+        { label: 'Médico', value: 'medico' },
+        { label: 'Paciente', value: 'paciente' }
+      ]"
+    >
+    </po-select>
+    <div class="dadosPaciente" *ngIf="tipoUsuario == 'paciente'">
+      <po-divider p-border-width="string" p-label="Dados do Paciente">
+      </po-divider>
+      <po-input
+        class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+        p-clean="true"
+        name="nomeCompleto"
+        p-label="Nome Completo"
+        [(ngModel)]="nomeCompleto"
+      >
+      </po-input>
+      <po-input
+        class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+        p-clean="true"
+        name="dataNascimento"
+        p-label="Data de Nascimento"
+        [(ngModel)]="dataNascimento"
+      >
+      </po-input>
+      <po-input
+        class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+        p-clean="true"
+        name="cpf"
+        p-label="CPF"
+        p-mask="999.999.999-99"
+        [(ngModel)]="cpf"
+      >
+      </po-input>
+      <po-input
+        class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+        p-clean="true"
+        name="rg"
+        p-label="RG"
+        p-mask="999.999.999-9"
+        [(ngModel)]="rg"
+      >
+      </po-input>
+      <po-input
+        class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+        p-clean="true"
+        name="email"
+        p-label="E-mail"
+        [(ngModel)]="email"
+      >
+      </po-input>
+      <po-input
+        class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+        p-clean="true"
+        name="telefone"
+        p-label="Telefone"
+        p-mask="(99) 99999?-9999"
+        [(ngModel)]="telefone"
+      >
+      </po-input>
+    </div>
+    <div class="dadosMedico" *ngIf="tipoUsuario == 'medico'">
+      <po-divider
+        p-border-width="string"
+        p-label="Dados do Profissional"
+      ></po-divider>
+      <po-input
+        p-clean="true"
+        name="nomeCompleto"
+        p-label="Nome Completo"
+        [(ngModel)]="nomeCompleto"
+      >
+      </po-input>
+      <po-input
+        class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+        p-clean="true"
+        name="rg"
+        p-label="RG"
+        p-mask="999.999.999-9"
+        [(ngModel)]="rg"
+      >
+      </po-input>
+      <po-input
+        class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+        p-clean="true"
+        name="siglaConselho"
+        p-label="Sigla do Conselho Profissional"
+        [(ngModel)]="siglaConselho"
+      >
+      </po-input>
+      <po-input
+        class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+        p-clean="true"
+        name="numeroConselho"
+        p-label="Número do Conselho Profissional"
+        [(ngModel)]="numeroConselho"
+      >
+      </po-input>
+      <po-input
+        class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+        p-clean="true"
+        name="ufConselho"
+        p-label="Estado do Conselho Profissional"
+        [(ngModel)]="ufConselho"
+      >
+      </po-input>
+    </div>
+    <div class="dadosLogin">
+      <po-divider p-border-width="string" p-label="Dados de Login">
+      </po-divider>
+      <po-input
+        class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+        p-clean="true"
+        name="nomeUsuario"
+        p-label="Nome de Usuário"
+        [(ngModel)]="nomeUsuario"
+      >
+      </po-input>
+      <po-input
+        class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+        p-clean="true"
+        name="nomeCompleto"
+        p-label="Senha"
+        [(ngModel)]="senhaUsuario"
+      >
+      </po-input>
+    </div>
+    <div class="btnCadastro">
+      <po-button
+        p-label="Finalizar cadastro"
+        p-kind="primary"
+        (p-click)="postInfo()"
+      ></po-button>
+    </div>
+  </po-widget>
+</po-page-default>

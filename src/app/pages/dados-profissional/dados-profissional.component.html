@@ -1,0 +1,44 @@
+<po-page-default [p-title]="menuItemSelected">
+  <po-widget>
+    <po-input
+      class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+      p-clean="true"
+      name="nomeCompleto"
+      p-label="Nome Completo"
+      [(ngModel)]="nomeCompleto"
+    >
+    </po-input>
+    <po-input
+      class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+      p-clean="true"
+      name="dataNascimento"
+      p-label="Sigla do Conselho Profissional"
+      [(ngModel)]="siglaConselho"
+    >
+    </po-input>
+    <po-input
+      class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+      p-clean="true"
+      name="cpf"
+      p-label="Número do Conselho Profissional"
+      [(ngModel)]="numeroConselho"
+    >
+    </po-input>
+    <po-input
+      class="po-xs-6 po-sm-6 po-md-6 po-lg-6"
+      p-clean="true"
+      name="rg"
+      p-label="Estado do Conselho Profissional"
+      [(ngModel)]="ufConselho"
+    >
+    </po-input>
+  </po-widget>
+  <div class="btnActions">
+    <po-button p-label="Editar dados" p-kind="primary" (p-click)="openModal()"></po-button>
+  </div>
+</po-page-default>
+
+<po-modal #modalUpdate
+  p-title="Editar dados"
+  [p-primary-action]="primaryAction"
+  [p-secondary-action]="secondaryAction"> Confirmar a alteração dos dados? </po-modal>
